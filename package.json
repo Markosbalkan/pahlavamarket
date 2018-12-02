@@ -1,0 +1,33 @@
+{
+  "name": "pahlavapack",
+  "version": "1.0.0",
+  "description": "html template",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Markosbalkan/pahlavamarket.git"
+  },
+  "author": "marko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Markosbalkan/pahlavamarket/issues"
+  },
+  "homepage": "https://github.com/Markosbalkan/pahlavamarket#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-util": "^3.0.8"
+  },
+  "dependencies": {
+    "bower": "^1.8.4"
+  }
+}

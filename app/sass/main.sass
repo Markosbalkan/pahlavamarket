@@ -1,0 +1,159 @@
+@import "_vars"
+@import "_fonts"
+@import "_libs"
+
+::placeholder
+  color: #666666
+
+body
+  font-size: 16px
+  position: relative
+  font-family: $default-font
+  overflwow-x: hidden
+  color: $text
+
+%list
+  margin: 0
+  padding: 0
+  list-style-type: none
+
+%style-head
+  font-size: 2.3rem
+  font-family: $black-font
+
+%img-resp
+  max-width: 100%
+  display: block
+  height: auto 
+
+%a
+  color: $text
+  &:hover
+    color: $text
+    text-decoration: none
+
+/* ---- Pahlava css ---- */
+
+.header__top-line-inner
+  display: flex
+  align-items: center
+  padding: 48px 0
+  justify-content: space-between
+
+.header__top-line-left
+  max-width: 476px
+  width: 100%
+  display: flex 
+  align-items: center
+  justify-content: space-between
+
+.header__logo
+  width: 45px
+  img
+    @extend %img-resp
+
+.header__wrap-menu
+  max-width: 380px
+  width: 100%
+  
+.header__menu
+  @extend %list
+  display: flex
+  justify-content: space-between
+
+.header__link
+  > a
+    @extend %a
+    transition: all .3s ease
+    &:hover
+      color: $accent
+
+.header__top-line-right
+  display: flex
+  width: 486px
+  align-items: center
+  max-width: 100%
+  justify-content: space-between
+
+.header__info
+  display: flex
+  align-items: center
+
+.header__city
+  margin-right: 42px
+
+.header__time
+  display: block
+  text-align: center
+  font-size: .6rem
+
+.header__phone
+  @extend %a
+  font-size: 1.1rem
+  b
+    font-family: $black-font
+
+.header__cart
+  width: 220px
+  height: 45px
+  position: relative
+
+.header__cart-inner
+  width: 100%
+  padding: 0 20px
+  transition: width .3s ease
+  &.header__cart-inner--open
+    position: absolute
+    width: 110%
+    padding: 30px 20px
+    top: -30px
+    right: 0
+    height: auto  
+    border-radius: 10px 
+    box-shadow: 5px 5px 40px rgba(0,0,0,0.12)
+    .header__card-list
+      display: flex
+
+.header__card-list
+  display: none
+
+.header__card-title
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.header__count-prod
+  font-size: .8rem
+
+.header__cart-btn
+  width: 111px
+  @extend %a
+  padding: 6px 0
+  border-radius: 20px
+  text-align: center
+  border: 1px solid $accent
+
+.header__count-prod
+  padding-right: 15px
+  position: relative
+  &:after
+    content: ""
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+    width: 11px
+    height: 11px
+    background: url('../img/down-arrow.svg') no-repeat center
+    position: absolute
+
+
+
+
+
+
+
+
+
+
+/* ---- Media css ---- */
+@import "_media.sass"
