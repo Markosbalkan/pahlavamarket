@@ -1,9 +1,28 @@
 $(function () {
 
   // Header cart
-  $('#header__count-prod').on('click', function() {
+  const countProd = $('#header__count-prod'),
+        objWin = $(window),
+        mobBtnColl = $('.header__btn-coll');
+
+  $(countProd).on('click', function() {
     $('.header__cart-inner').toggleClass('header__cart-inner--open');
+  });
+
+  $(mobBtnColl).on('click', function() {
+    $('.header__pop-info-phone').toggleClass('header__pop-info-phone--open');
+  });
+
+  objWin.on('scroll', function() {
+    
+    if ($(this).scrollTop() > 0 && $(this).width() > 992) {
+      $('.header').addClass('header--scroll')
+    } else {
+      $('.header').removeClass('header--scroll');
+    }
+
   })
+
 
 
 

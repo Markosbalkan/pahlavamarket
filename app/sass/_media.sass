@@ -4,9 +4,50 @@
 
 // ≥1200px
 +media-breakpoint-down(lg)
+  /*-----
+    Header
+   -----*/
+  .header__phone
+    font-size: 1rem
+  .header__top-line-left
+    width: 400px
+  .header__wrap-menu
+    max-width: 330px
+  .header__cart
+    margin-left: 20px 
 
 // ≥992px
 +media-breakpoint-down(md)
+  body
+    padding-top: 50px
+  /*-----
+    Header
+   -----*/
+  .header
+    box-shadow: 0 2px 15px rgba(000,000,000,.05)
+  .header__cart
+    display: none
+  .header__info
+    display: none
+  .header__top-line-right
+    width: 10%
+    max-width: inherit
+  
+  .header__top-line-left
+    max-width: 83%
+  .header__logo
+    margin-right: 20px
+  .header__wrap-menu
+    overflow-x: auto
+  .header__menu
+    width: 310px
+    flex-shrink: 0
+  .header__top-line-inner
+    height: 50px
+    padding: 7px 0
+  .header__btn-coll
+    display: block
+
 
 // ≥768px
 +media-breakpoint-down(sm)

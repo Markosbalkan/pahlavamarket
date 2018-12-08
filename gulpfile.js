@@ -33,7 +33,7 @@ gulp.task('styles', function() {
 
 gulp.task('watch', ['styles', 'browser-sync'], function() {
 	gulp.watch("app/sass/*.sass", ['styles']);
-	gulp.watch('app/js/common.js', browserSync.reload);
+	gulp.watch('app/js/main.js', browserSync.reload);
 	gulp.watch('app/*.html', browserSync.reload)
 });
 

@@ -34,15 +34,32 @@ body
 
 /* ---- Pahlava css ---- */
 
+body
+  padding-top: 116px
+
+.header
+  position: fixed
+  width: 100%
+  top: 0
+  background: #fff
+  z-index: 999
+  transition: box-shadow  .3s ease
+  &.header--scroll
+    box-shadow: 0 2px 15px rgba(000,000,000,.05)
+    .header__top-line-inner
+      height: 50px
+
 .header__top-line-inner
+  height: 116px
   display: flex
   align-items: center
-  padding: 48px 0
+  padding: 34px 0
   justify-content: space-between
+  transition: height .3s ease
 
 .header__top-line-left
-  max-width: 476px
-  width: 100%
+  width: 425px
+  max-width: 50%
   display: flex 
   align-items: center
   justify-content: space-between
@@ -53,9 +70,10 @@ body
     @extend %img-resp
 
 .header__wrap-menu
-  max-width: 380px
+  max-width: 350px
   width: 100%
-  
+  // border: 1px solid fuchsia
+
 .header__menu
   @extend %list
   display: flex
@@ -64,23 +82,29 @@ body
 .header__link
   > a
     @extend %a
+    font-size: .9rem
+    font-family: $medium-font
     transition: all .3s ease
     &:hover
       color: $accent
 
 .header__top-line-right
   display: flex
-  width: 486px
+  width: 500px
   align-items: center
-  max-width: 100%
+  max-width: 50%
   justify-content: space-between
 
 .header__info
   display: flex
+  max-width: 250px
+  width: 100%
+  flex-shrink: 2
+  justify-content: space-between
   align-items: center
 
 .header__city
-  margin-right: 42px
+  font-size: .9rem 
 
 .header__time
   display: block
@@ -94,25 +118,30 @@ body
     font-family: $black-font
 
 .header__cart
+  flex-shrink: 0
   width: 220px
   height: 45px
   position: relative
 
 .header__cart-inner
   width: 100%
-  padding: 0 20px
-  transition: width .3s ease
+  top: -15px
+  right: 0
+  background: #fff
+  padding: 15px 20px 0
+  position: absolute
+  transition: width .3s ease, padding .3s ease
   &.header__cart-inner--open
-    position: absolute
-    width: 110%
-    padding: 30px 20px
-    top: -30px
-    right: 0
+    width: 109%
     height: auto  
     border-radius: 10px 
+    padding-bottom: 15px
     box-shadow: 5px 5px 40px rgba(0,0,0,0.12)
     .header__card-list
       display: flex
+    .header__count-prod::after
+      transform: translateY(-50%) rotate(180deg)
+
 
 .header__card-list
   display: none
@@ -123,6 +152,7 @@ body
   justify-content: space-between
 
 .header__count-prod
+  cursor: pointer
   font-size: .8rem
 
 .header__cart-btn
@@ -140,16 +170,47 @@ body
     content: ""
     right: 0
     top: 50%
-    transform: translateY(-50%)
     width: 11px
     height: 11px
-    background: url('../img/down-arrow.svg') no-repeat center
     position: absolute
+    transition: transform .3s ease
+    transform: translateY(-50%) rotate(0deg)
+    background: url('../img/down-arrow.svg') no-repeat center
 
 
+.header__btn-coll
+  display: none
+  // flex-shrink: 0
+  position: relative
+  // width: 100%
 
+.heder__btn-icon
+  width: 100%
+  max-width: 35px
+  border: none
+  background: none
+  img
+    @extend %img-resp
 
-
+.header__pop-info-phone
+  visibility: hidden
+  position: absolute
+  top: 45px
+  right: 0
+  text-align: center
+  width: 290px
+  padding: 5px
+  border-radius: 4px
+  background: #fff
+  opacity: 0
+  transform: translateY(-50%)
+  box-shadow: 0px 2px 4px #ccc
+  transition: transform .3s ease, opacity .3s ease, visibility .3s ease
+  // z-index: -10
+  &.header__pop-info-phone--open
+    visibility: visible
+    opacity: 1
+    transform: translateY(0)
 
 
 
