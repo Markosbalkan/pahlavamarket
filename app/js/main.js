@@ -9,8 +9,15 @@ $(function () {
     $('.header__cart-inner').toggleClass('header__cart-inner--open');
   });
 
-  $(mobBtnColl).on('click', function() {
+  $(mobBtnColl).on('click', function(e) {
+    if (e.target.closest('.header__pop-info-phone')) return;
     $('.header__pop-info-phone').toggleClass('header__pop-info-phone--open');
+    
+    if (document.querySelector('.header__pop-info-phone--open')) 
+      $(this).find("img").attr('src', 'img/close-phone-btn.svg');
+    else 
+      $(this).find("img").attr('src', 'img/icon-phone-mob.svg');
+    
   });
 
   objWin.on('scroll', function() {

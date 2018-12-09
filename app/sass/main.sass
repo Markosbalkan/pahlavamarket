@@ -11,6 +11,8 @@ body
   font-family: $default-font
   overflwow-x: hidden
   color: $text
+html
+  font-size: 16px
 
 %list
   margin: 0
@@ -186,7 +188,6 @@ body
 
 .heder__btn-icon
   width: 100%
-  max-width: 35px
   border: none
   background: none
   img
@@ -206,14 +207,148 @@ body
   transform: translateY(-50%)
   box-shadow: 0px 2px 4px #ccc
   transition: transform .3s ease, opacity .3s ease, visibility .3s ease
-  // z-index: -10
   &.header__pop-info-phone--open
     visibility: visible
     opacity: 1
     transform: translateY(0)
 
+/*-----
+ Section main banner
+ ------*/
+.main-banner
+  padding: 60px 0
+  background: url('../img/main-banner.png') no-repeat center
+  background-size: cover
+
+.main-banner__head
+  margin-bottom: 55px
+  h1
+    font-size: 3rem
+    color: #fff
+    line-height: 1.1
+    font-family: $black-font
+  small
+    font-size: 1.5rem
+    color: #fff
+    font-family: $medium-font
+
+.main-banner__list-adv
+  @extend %list
+  display: flex
+  // flex-wrap: wrap
+  justify-content: space-between
+
+.main-banner__item-adv
+  padding: 0 5px
+  display: flex
+  max-width: 300px
+  width: 100%
+  align-items: flex-start
+  &:before
+    content: ''
+    display: block
+    width: 65px
+    height: 65px
+    flex-shrink: 0
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+  &:first-child::before
+    background-image: url('../img/item-adv-1.svg')
+  &:nth-child(2)::before
+    background-image: url('../img/item-adv-2.svg')
+  &:last-child::before
+    background-image: url('../img/item-adv-3.svg')
+
+.main-banner__title
+  font-family: $black-font
+  color: #fff
+  margin-bottom: 5px
+  display: block
+
+.main-banner__desc
+  font-family: $medium-font
+  color: #ffffff
+  font-size: .85rem
+  line-height: 1.1
 
 
+/*-----
+  Listing
+ ------*/
+
+.listing
+  padding-top: 65px
+
+.card
+  background: #fff
+  font-family: $medium-font
+  box-shadow: 0 2px 15px rgba(000,000,000, .15)
+
+.card__prod-img
+  margin-bottom: 32px
+  img 
+    @extend %img-resp
+
+.card__body
+  padding-left: 30px
+  padding-bottom: 32px
+
+.card__prod-name
+  font-size: 18px
+  margin-bottom: 15px
+
+.card__prod-compos
+  font-size: 14px
+  max-width: 180px
+  margin-bottom: 24px
+
+.card__prod-weight
+  @extend %list
+  display: flex
+  align-items: center
+  max-width: 200px
+  background: #F4F4F4
+  margin-bottom: 24px
+  border-radius: 25px
+
+.card__prod-weight-item
+  width: 33.3%
+  text-align: center
+
+.card__prod-input
+  display: none
+
+.card__prod-label
+  width: 90%
+  font-size: 14px
+  padding: 5px 0
+  margin-bottom: 0
+  border-radius: 25px
+  border: 1px solid transparent
+  transition: border .3s ease, width .3s ease
+  
+.card__prod-input:checked + .card__prod-label
+  border-color: #133350
+  border-radius: 25px
+  width: 100%
+
+.card__prod-foot
+  padding-right: 30px
+  display: flex
+  align-items: center
+  justify-content: space-between
+
+.card__prod-price
+  font-size: 18px
+
+.card__prod-cart-btn
+  background: $accent
+  border: none
+  width: 122px
+  padding: 7px 0
+  font-size: 14px
+  border-radius: 25px
 
 
 /* ---- Media css ---- */

@@ -30,7 +30,7 @@
   .header__info
     display: none
   .header__top-line-right
-    width: 10%
+    width: 35px
     max-width: inherit
   
   .header__top-line-left
@@ -46,11 +46,23 @@
     height: 50px
     padding: 7px 0
   .header__btn-coll
-    display: block
+    display: flex
 
+  /*-----
+    Section main banner
+   ------*/
 
 // ≥768px
 +media-breakpoint-down(sm)
+  // html
+  //   font-size: 16px
+  /*-----
+    Section main banner
+    ------*/
+  .main-banner__list-adv
+    flex-wrap: wrap
+  .main-banner__item-adv:not(:last-child)
+    margin-bottom: 20px
 
 // ≥576px
 +media-breakpoint-down(xs)
