@@ -2,6 +2,11 @@
 @import "_fonts"
 @import "_libs"
 
+/* TODO:
+ * 1. Подугружать картинки для разных разрешений в карточку товара
+ * 2. Определить нужный размер изображения.
+ */
+
 ::placeholder
   color: #666666
 
@@ -33,6 +38,10 @@ html
   &:hover
     color: $text
     text-decoration: none
+
+%comm-h
+  font-size: 2.25rem
+  font-family: $black-font
 
 /* ---- Pahlava css ---- */
 
@@ -282,6 +291,7 @@ body
 
 .card
   background: #fff
+  margin-bottom: 20px
   font-family: $medium-font
   box-shadow: 0 2px 15px rgba(000,000,000, .15)
 
@@ -290,24 +300,32 @@ body
   img 
     @extend %img-resp
 
+%list-align
+  max-width: 200px
+  width: 100%
+  
 .card__body
-  padding-left: 30px
   padding-bottom: 32px
+  display: flex
+  flex-direction: column
+  align-items: center
 
 .card__prod-name
   font-size: 18px
+  text-align: left
+  @extend %list-align
   margin-bottom: 15px
 
 .card__prod-compos
   font-size: 14px
-  max-width: 180px
+  @extend %list-align
   margin-bottom: 24px
 
 .card__prod-weight
   @extend %list
   display: flex
   align-items: center
-  max-width: 200px
+  @extend %list-align
   background: #F4F4F4
   margin-bottom: 24px
   border-radius: 25px
@@ -334,8 +352,8 @@ body
   width: 100%
 
 .card__prod-foot
-  padding-right: 30px
   display: flex
+  @extend %list-align
   align-items: center
   justify-content: space-between
 
@@ -349,6 +367,16 @@ body
   padding: 7px 0
   font-size: 14px
   border-radius: 25px
+
+/*-------
+  #About-us
+ ---------*/
+
+.about-us__head
+  text-align: center
+  h2
+    @extend %comm-h
+    margin-bottom: 0
 
 
 /* ---- Media css ---- */

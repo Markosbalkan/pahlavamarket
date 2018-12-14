@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Museo Sans Black";
   font-weight: 800;
@@ -2387,18 +2388,18 @@ html {
 .mh-100 {
   max-height: 100% !important; }
 
+/* TODO:
+ * 1. Подугружать картинки для разных разрешений в карточку товара
+ * 2. Определить нужный размер изображения.
+ */
 ::-webkit-input-placeholder {
   color: #666666; }
-
 ::-moz-placeholder {
   color: #666666; }
-
 :-ms-input-placeholder {
   color: #666666; }
-
 ::-ms-input-placeholder {
   color: #666666; }
-
 ::placeholder {
   color: #666666; }
 
@@ -2427,6 +2428,10 @@ html {
   .header__link > a:hover, .header__phone:hover, .header__cart-btn:hover {
     color: #133350;
     text-decoration: none; }
+
+.about-us__head h2 {
+  font-size: 2.25rem;
+  font-family: "Museo Sans Black", sans-serif; }
 
 /* ---- Pahlava css ---- */
 body {
@@ -2763,6 +2768,7 @@ body {
 
 .card {
   background: #fff;
+  margin-bottom: 20px;
   font-family: "Museo Sans Medium", sans-serif;
   -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
           box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15); }
@@ -2770,17 +2776,33 @@ body {
 .card__prod-img {
   margin-bottom: 32px; }
 
+.card__prod-name, .card__prod-compos, .card__prod-weight, .card__prod-foot {
+  max-width: 200px;
+  width: 100%; }
+
 .card__body {
-  padding-left: 30px;
-  padding-bottom: 32px; }
+  padding-bottom: 32px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
 
 .card__prod-name {
   font-size: 18px;
+  text-align: left;
   margin-bottom: 15px; }
 
 .card__prod-compos {
   font-size: 14px;
-  max-width: 180px;
   margin-bottom: 24px; }
 
 .card__prod-weight {
@@ -2792,7 +2814,6 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 200px;
   background: #F4F4F4;
   margin-bottom: 24px;
   -webkit-border-radius: 25px;
@@ -2824,7 +2845,6 @@ body {
   width: 100%; }
 
 .card__prod-foot {
-  padding-right: 30px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -2850,6 +2870,14 @@ body {
   -webkit-border-radius: 25px;
           border-radius: 25px; }
 
+/*-------
+  #About-us
+ ---------*/
+.about-us__head {
+  text-align: center; }
+  .about-us__head h2 {
+    margin-bottom: 0; }
+
 /* ---- Media css ---- */
 /*==========  Desktop First  ==========*/
 @media (max-width: 1199.98px) {
@@ -2863,7 +2891,13 @@ body {
   .header__wrap-menu {
     max-width: 330px; }
   .header__cart {
-    margin-left: 20px; } }
+    margin-left: 20px; }
+  /*------
+    Listing
+   --------*/
+  .listing__inner .col-lg-3 {
+    padding-left: 10px;
+    padding-right: 10px; } }
 
 @media (max-width: 991.98px) {
   body {
@@ -2913,6 +2947,37 @@ body {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
   .main-banner__item-adv:not(:last-child) {
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+  /*-------
+    Listing
+   -------*/
+  .card {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
+  .card__body {
+    padding: 5px;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start; }
+  .card__prod-img {
+    margin: 0; }
+  .card__head {
+    width: 40%; }
+  .card__body {
+    width: 60%; }
+  .card__prod-name, .card__prod-compos, .card__prod-weight, .card__prod-foot {
+    max-width: inherit;
+    width: 100%;
+    margin-bottom: 10px; } }
+
+@media (max-width: 575.98px) {
+  /*-------
+       Listing
+   -------*/
+  .card__prod-cart-btn {
+    width: 95px; } }
 
 /*==========  Mobile First  ==========*/

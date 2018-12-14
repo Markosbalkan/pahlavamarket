@@ -15,6 +15,14 @@
     max-width: 330px
   .header__cart
     margin-left: 20px 
+  
+  /*------
+    Listing
+   --------*/
+  .listing__inner
+    .col-lg-3
+      padding-left: 10px
+      padding-right: 10px
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -63,10 +71,32 @@
     flex-wrap: wrap
   .main-banner__item-adv:not(:last-child)
     margin-bottom: 20px
+  /*-------
+    Listing
+   -------*/
+  .card
+    display: flex
+  .card__body
+    padding: 5px 
+    align-items: flex-start
+  .card__prod-img
+    margin: 0
+  .card__head
+    width: 40%
+  .card__body
+    width: 60%
+  %list-align
+    max-width: inherit
+    width: 100%
+    margin-bottom: 10px
 
 // ≥576px
 +media-breakpoint-down(xs)
-
+  /*-------
+       Listing
+   -------*/
+  .card__prod-cart-btn
+    width: 95px
   
 
 /*==========  Mobile First  ==========*/
