@@ -371,12 +371,125 @@ body
 /*-------
   #About-us
  ---------*/
+.about-us 
+  background: #F4F4F4
+  padding-top: 65px
+  padding-bottom: 195px
 
 .about-us__head
   text-align: center
   h2
     @extend %comm-h
     margin-bottom: 0
+  p
+    font-size: 1.5rem
+    margin-bottom: 0
+    font-family: $medium-font
+
+.about-us__inner
+  padding-top: 38px
+
+.about-us__img
+  img
+    @extend %img-resp
+
+.about-us__bold
+  display: block
+  font-size: 1.5rem
+  margin-bottom: 16px
+  font-family: $bold-font
+
+.about-us__desc
+  margin-bottom: 60px
+  font-size: 1.2rem
+
+// Primary-btn
+.primary-btn
+  width: 210px
+  border: none
+  outline: none
+  display: block
+  cursor: pointer
+  font-size: 18px
+  padding: 15px 0
+  border-radius: 30px
+  background: $accent
+  transition: box-shadow .3s ease
+  font-family: $medium-font
+  &:focus
+    outline: none
+
+/*-----
+  Delivery product
+ -----*/
+
+.deliver-prod
+  background: #F4F4F4
+  padding: 120px 0
+
+.deliver-prod__head
+  text-align: center
+  h3
+    @extend %comm-h
+  p
+    font-size: 1.5rem
+    margin-bottom: 0
+    font-family: $medium-font
+
+.deliver-prod__inner
+  padding-top: 40px
+
+.deliver-prod__item
+  height: 315px
+  padding: 40px 20px 
+  background: #fff
+  text-align: center
+  position: relative
+  margin-bottom: 30px
+  &:before
+    content: ''
+    width: 60px
+    height: 60px
+    margin: 0 auto 20px
+    background-position: center
+    background-repeat: no-repeat
+    background-size: contain
+    display: block
+
+.deliver-prod__inner
+  [class^="col-"]
+    &:first-child .deliver-prod__item::before
+      background-image: url('../img/deliver-prod-icon-1.svg') 
+    &:nth-child(2) .deliver-prod__item::before
+      background-image: url('../img/deliver-prod-icon-2.svg') 
+    &:nth-child(3) .deliver-prod__item::before
+      background-image: url('../img/deliver-prod-icon-3.svg') 
+    &:last-child .deliver-prod__item::before
+      background-image: url('../img/deliver-prod-icon-4.svg')
+      
+
+.deliver-prod__item
+  transition: all .3s ease
+
+.deliver-prod__item:hover
+  background: #FFC121
+  box-shadow: 0 4px 10px #FFB800
+
+.deliver-prod__stage-name
+  font-size: 1.5rem
+  margin-bottom: 15px
+
+.deliver-prod__stage-desc
+  line-height: 1.2
+  font-size: .9rem
+
+
+/* ---------
+  Sect main-slkider
+  --------------*/
+
+.main-slider
+ 
 
 
 /* ---- Media css ---- */

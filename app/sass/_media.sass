@@ -59,6 +59,19 @@
   /*-----
     Section main banner
    ------*/
+  
+  /*-----
+    Section about-us
+   -------*/
+  .about-us__img
+    margin-bottom: 30px
+    img
+      margin: 0 auto
+
+  .primary-btn
+    margin: 0 auto
+    &:active
+      box-shadow: 0 4px 10px $accent
 
 // ≥768px
 +media-breakpoint-down(sm)
@@ -89,14 +102,27 @@
     max-width: inherit
     width: 100%
     margin-bottom: 10px
+  
+  /*-----
+    Section about-us
+   -------*/
+  .primary-btn
+    width: 100%
+    padding: 10px 0
 
 // ≥576px
 +media-breakpoint-down(xs)
   /*-------
-       Listing
+    Listing
    -------*/
   .card__prod-cart-btn
     width: 95px
+
+  /*-----
+   Delivery product
+   -----*/
+  .deliver-prod__item
+    height: 280px
   
 
 /*==========  Mobile First  ==========*/
@@ -109,6 +135,13 @@
 
 // ≤992px
 +media-breakpoint-up(lg)
+  /* -----
+    Main-style
+   ------*/
+  .primary-btn
+    &:hover
+      box-shadow: 0 4px 10px $accent
+
 
 // ≤1200px
 +media-breakpoint-up(xl)

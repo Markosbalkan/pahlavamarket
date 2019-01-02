@@ -2418,7 +2418,7 @@ html {
   padding: 0;
   list-style-type: none; }
 
-.header__logo img, .heder__btn-icon img, .card__prod-img img {
+.header__logo img, .heder__btn-icon img, .card__prod-img img, .about-us__img img {
   max-width: 100%;
   display: block;
   height: auto; }
@@ -2429,7 +2429,7 @@ html {
     color: #133350;
     text-decoration: none; }
 
-.about-us__head h2 {
+.about-us__head h2, .deliver-prod__head h3 {
   font-size: 2.25rem;
   font-family: "Museo Sans Black", sans-serif; }
 
@@ -2873,11 +2873,121 @@ body {
 /*-------
   #About-us
  ---------*/
+.about-us {
+  background: #F4F4F4;
+  padding-top: 65px;
+  padding-bottom: 195px; }
+
 .about-us__head {
   text-align: center; }
   .about-us__head h2 {
     margin-bottom: 0; }
+  .about-us__head p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    font-family: "Museo Sans Medium", sans-serif; }
 
+.about-us__inner {
+  padding-top: 38px; }
+
+.about-us__bold {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  font-family: "Museo Sans Bold", sans-serif; }
+
+.about-us__desc {
+  margin-bottom: 60px;
+  font-size: 1.2rem; }
+
+.primary-btn {
+  width: 210px;
+  border: none;
+  outline: none;
+  display: block;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 15px 0;
+  -webkit-border-radius: 30px;
+          border-radius: 30px;
+  background: #FFB800;
+  -webkit-transition: -webkit-box-shadow .3s ease;
+  transition: -webkit-box-shadow .3s ease;
+  -o-transition: box-shadow .3s ease;
+  transition: box-shadow .3s ease;
+  transition: box-shadow .3s ease, -webkit-box-shadow .3s ease;
+  font-family: "Museo Sans Medium", sans-serif; }
+  .primary-btn:focus {
+    outline: none; }
+
+/*-----
+  Delivery product
+ -----*/
+.deliver-prod {
+  background: #F4F4F4;
+  padding: 120px 0; }
+
+.deliver-prod__head {
+  text-align: center; }
+  .deliver-prod__head p {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    font-family: "Museo Sans Medium", sans-serif; }
+
+.deliver-prod__inner {
+  padding-top: 40px; }
+
+.deliver-prod__item {
+  height: 315px;
+  padding: 40px 20px;
+  background: #fff;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px; }
+  .deliver-prod__item:before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: contain;
+            background-size: contain;
+    display: block; }
+
+.deliver-prod__inner [class^="col-"]:first-child .deliver-prod__item::before {
+  background-image: url("../img/deliver-prod-icon-1.svg"); }
+
+.deliver-prod__inner [class^="col-"]:nth-child(2) .deliver-prod__item::before {
+  background-image: url("../img/deliver-prod-icon-2.svg"); }
+
+.deliver-prod__inner [class^="col-"]:nth-child(3) .deliver-prod__item::before {
+  background-image: url("../img/deliver-prod-icon-3.svg"); }
+
+.deliver-prod__inner [class^="col-"]:last-child .deliver-prod__item::before {
+  background-image: url("../img/deliver-prod-icon-4.svg"); }
+
+.deliver-prod__item {
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease; }
+
+.deliver-prod__item:hover {
+  background: #FFC121;
+  -webkit-box-shadow: 0 4px 10px #FFB800;
+          box-shadow: 0 4px 10px #FFB800; }
+
+.deliver-prod__stage-name {
+  font-size: 1.5rem;
+  margin-bottom: 15px; }
+
+.deliver-prod__stage-desc {
+  line-height: 1.2;
+  font-size: .9rem; }
+
+/* ---------
+  Sect main-slkider
+  --------------*/
 /* ---- Media css ---- */
 /*==========  Desktop First  ==========*/
 @media (max-width: 1199.98px) {
@@ -2936,7 +3046,19 @@ body {
     display: flex; }
   /*-----
     Section main banner
-   ------*/ }
+   ------*/
+  /*-----
+    Section about-us
+   -------*/
+  .about-us__img {
+    margin-bottom: 30px; }
+    .about-us__img img {
+      margin: 0 auto; }
+  .primary-btn {
+    margin: 0 auto; }
+    .primary-btn:active {
+      -webkit-box-shadow: 0 4px 10px #FFB800;
+              box-shadow: 0 4px 10px #FFB800; } }
 
 @media (max-width: 767.98px) {
   /*-----
@@ -2971,13 +3093,31 @@ body {
   .card__prod-name, .card__prod-compos, .card__prod-weight, .card__prod-foot {
     max-width: inherit;
     width: 100%;
-    margin-bottom: 10px; } }
+    margin-bottom: 10px; }
+  /*-----
+    Section about-us
+   -------*/
+  .primary-btn {
+    width: 100%;
+    padding: 10px 0; } }
 
 @media (max-width: 575.98px) {
   /*-------
-       Listing
+    Listing
    -------*/
   .card__prod-cart-btn {
-    width: 95px; } }
+    width: 95px; }
+  /*-----
+   Delivery product
+   -----*/
+  .deliver-prod__item {
+    height: 280px; } }
 
 /*==========  Mobile First  ==========*/
+@media (min-width: 992px) {
+  /* -----
+    Main-style
+   ------*/
+  .primary-btn:hover {
+    -webkit-box-shadow: 0 4px 10px #FFB800;
+            box-shadow: 0 4px 10px #FFB800; } }
