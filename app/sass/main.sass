@@ -5,6 +5,9 @@
 /* TODO:
  * 1. Подугружать картинки для разных разрешений в карточку товара
  * 2. Определить нужный размер изображения.
+ * 3. Уменшить верхние и нижние отсупы у секций на мобильном разрешении
+ * 4. Доверстать корзину. Сделать корзину для мобилки.
+ * 5. Переопределить шрифты. Там где размер шрифта смотрится хорошо на всез разреш сделать в px, в остальгных случ в rem  
  */
 
 ::placeholder
@@ -26,12 +29,19 @@ html
 
 %style-head
   font-size: 2.3rem
-  font-family: $black-font
+  font-weight: 800
 
 %img-resp
   max-width: 100%
   display: block
   height: auto 
+
+.img-resp
+  max-width: 100%
+  display: block
+  height: auto 
+  &.img-width
+    width: 100%
 
 %a
   color: $text
@@ -40,8 +50,40 @@ html
     text-decoration: none
 
 %comm-h
+  line-height: 1.2
+  margin-bottom: 0
   font-size: 2.25rem
-  font-family: $black-font
+  font-weight: 800
+
+%primary-text
+  font-size: 1.5rem
+  margin-bottom: 0
+  font-weight: 500
+
+// Primary-btn
+.primary-btn
+  color: $text
+  width: 205px
+  border: none
+  outline: none
+  display: block
+  cursor: pointer
+  font-size: 17px
+  padding: 10px 0
+  border-radius: 30px
+  background: $accent
+  transition: box-shadow .3s ease
+  font-weight: 500
+  &:focus
+    outline: none
+  &.btn-a
+    text-decoration: none
+    color: $text
+    &:hover
+      text-decoration: none
+      color: $text
+
+
 
 /* ---- Pahlava css ---- */
 
@@ -94,7 +136,7 @@ body
   > a
     @extend %a
     font-size: .9rem
-    font-family: $medium-font
+    font-weight: 500
     transition: all .3s ease
     &:hover
       color: $accent
@@ -126,7 +168,7 @@ body
   @extend %a
   font-size: 1.1rem
   b
-    font-family: $black-font
+    font-weight: 800
 
 .header__cart
   flex-shrink: 0
@@ -235,11 +277,11 @@ body
     font-size: 3rem
     color: #fff
     line-height: 1.1
-    font-family: $black-font
+    font-weight: 800
   small
     font-size: 1.5rem
     color: #fff
-    font-family: $medium-font
+    font-weight: 500
 
 .main-banner__list-adv
   @extend %list
@@ -270,111 +312,24 @@ body
     background-image: url('../img/item-adv-3.svg')
 
 .main-banner__title
-  font-family: $black-font
+  font-weight: 800
   color: #fff
   margin-bottom: 5px
   display: block
 
 .main-banner__desc
-  font-family: $medium-font
+  font-weight: 500
   color: #ffffff
   font-size: .85rem
   line-height: 1.1
-
-
-/*-----
-  Listing
- ------*/
-
-.listing
-  padding-top: 65px
-
-.card
-  background: #fff
-  margin-bottom: 20px
-  font-family: $medium-font
-  box-shadow: 0 2px 15px rgba(000,000,000, .15)
-
-.card__prod-img
-  margin-bottom: 32px
-  img 
-    @extend %img-resp
-
-%list-align
-  max-width: 200px
-  width: 100%
-  
-.card__body
-  padding-bottom: 32px
-  display: flex
-  flex-direction: column
-  align-items: center
-
-.card__prod-name
-  font-size: 18px
-  text-align: left
-  @extend %list-align
-  margin-bottom: 15px
-
-.card__prod-compos
-  font-size: 14px
-  @extend %list-align
-  margin-bottom: 24px
-
-.card__prod-weight
-  @extend %list
-  display: flex
-  align-items: center
-  @extend %list-align
-  background: #F4F4F4
-  margin-bottom: 24px
-  border-radius: 25px
-
-.card__prod-weight-item
-  width: 33.3%
-  text-align: center
-
-.card__prod-input
-  display: none
-
-.card__prod-label
-  width: 90%
-  font-size: 14px
-  padding: 5px 0
-  margin-bottom: 0
-  border-radius: 25px
-  border: 1px solid transparent
-  transition: border .3s ease, width .3s ease
-  
-.card__prod-input:checked + .card__prod-label
-  border-color: #133350
-  border-radius: 25px
-  width: 100%
-
-.card__prod-foot
-  display: flex
-  @extend %list-align
-  align-items: center
-  justify-content: space-between
-
-.card__prod-price
-  font-size: 18px
-
-.card__prod-cart-btn
-  background: $accent
-  border: none
-  width: 122px
-  padding: 7px 0
-  font-size: 14px
-  border-radius: 25px
 
 /*-------
   #About-us
  ---------*/
 .about-us 
   background: #F4F4F4
-  padding-top: 65px
-  padding-bottom: 195px
+  padding-top: 120px
+  padding-bottom: 120px
 
 .about-us__head
   text-align: center
@@ -384,7 +339,7 @@ body
   p
     font-size: 1.5rem
     margin-bottom: 0
-    font-family: $medium-font
+    font-weight: 500
 
 .about-us__inner
   padding-top: 38px
@@ -397,27 +352,12 @@ body
   display: block
   font-size: 1.5rem
   margin-bottom: 16px
-  font-family: $bold-font
+  font-weight: 700
 
 .about-us__desc
   margin-bottom: 60px
   font-size: 1.2rem
 
-// Primary-btn
-.primary-btn
-  width: 210px
-  border: none
-  outline: none
-  display: block
-  cursor: pointer
-  font-size: 18px
-  padding: 15px 0
-  border-radius: 30px
-  background: $accent
-  transition: box-shadow .3s ease
-  font-family: $medium-font
-  &:focus
-    outline: none
 
 /*-----
   Delivery product
@@ -434,7 +374,7 @@ body
   p
     font-size: 1.5rem
     margin-bottom: 0
-    font-family: $medium-font
+    font-weight: 500
 
 .deliver-prod__inner
   padding-top: 40px
@@ -485,11 +425,508 @@ body
 
 
 /* ---------
-  Sect main-slkider
+  Sect main-slider
   --------------*/
-
+    
 .main-slider
- 
+  padding-top: 120px
+  padding-bottom: 120px
+
+.main-slider__head
+  text-align: center
+  margin-bottom: 32px
+  h3
+    @extend %comm-h
+  p
+    font-size: 1.5rem
+    margin: 0
+    font-weight: 500
+
+.main-slider__inner
+  position: relative
+
+.main-slider__item
+  position: relative
+  padding: 0 40px
+  display: flex!important
+  align-items: center
+  justify-content: center
+  outline: none
+  margin-bottom: 80px
+
+.main-slider__img-prod
+  width: 45%
+  display: block
+  img
+    @extend %img-resp
+
+.main-slider__desc-prod
+  width: 45%
+  padding-left: 50px
+
+.main-slider__btn-nav
+  top: 50%
+  z-index: 10
+  border: none
+  cursor: pointer
+  padding: 0
+  background: none
+  position: absolute
+  transform: translateY(-50%)
+
+.main-slider__btn-nav--prev
+  left: 0
+.main-slider__btn-nav--next
+  right: 0
+
+.main-slider__nav
+  @extend %list
+  display: flex
+  justify-content: space-between
+  margin-left: -15px
+  margin-right: -15px
+  li
+    padding: 0 15px
+    &.slick-active
+      button
+        color: $accent
+        text-shadow: 0 4px 10px $accent
+  button
+    background: none
+    border: none
+    padding: 0
+    color: $text
+    text-align: left
+    font-size: 14px
+    cursor: pointer
+    outline: none
+    transition: all .3s ease
+  p
+    margin: 0
+
+.main-slider__name-prod
+  display: block
+  font-size: 1.5rem
+  margin-bottom: 16px
+  
+.main-slider__compos-prod
+  font-size: 1.1rem
+  margin-bottom: 60px
+
+/* -------
+  Rewiews
+  ------- */
+.rewiews
+  padding-top: 121px
+  padding-bottom: 121px
+
+.rewiews__top
+  text-align: center
+
+.rewiews__head
+  @extend %comm-h
+
+.rewiews__desc
+  font-size: 1.5rem
+  margin-bottom: 0
+  font-weight: 500
+
+.rewiews__list
+  display: flex
+  @extend %list
+  margin-left: -15px
+  margin-right: -15px
+  padding-top: 32px
+
+.rewiews__item
+  padding-left: 15px
+  padding-right: 15px
+  &:not(:last-child)
+    margin-bottom: 30px
+
+.rewiews__name-client
+  margin-bottom: 15px
+  // border: 1px solid fuchsia
+
+.rewiews__eval
+  @extend %list
+  display: flex
+
+
+.rewiews__eval-star
+  width: 14px
+  height: 14px
+  background: url('../img/eval-star.svg') no-repeat center
+  &:not(:last-child)
+    margin-right: 3px
+
+.rewiews__text
+  line-height: 1.2
+  margin-bottom: 10px
+
+.rewiews__photo-client
+  margin-bottom: 5px
+
+
+
+/* --------------------
+  Section popular goods
+  -------------------- */
+
+%pop-gds__align
+  max-width: 150px
+  width: 100%
+  
+.pop-gds
+  padding-top: 120px
+  padding-bottom: 120px
+
+.pop-gds__top
+  margin-bottom: 33px
+  text-align: center
+
+.pop-gds__head
+  @extend %comm-h
+
+.pop-gds__desc
+  font-size: 1.5rem
+  margin-bottom: 0
+  font-weight: 500
+
+.pop-gds__img
+  img
+    @extend %img-resp
+
+.pop-gds__name-link
+  @extend %a
+  font-size: 1rem
+
+.pop-gds__item
+  background: #fff
+  display: flex
+  margin-bottom: 30px
+  flex-direction: column
+  box-shadow: 0 2px 15px rgba(0,0,0,.15)
+
+.pop-gds__item-body
+  padding: 25px 0
+  display: flex
+  align-items: center
+  flex-direction: column
+
+.pop-gds__name
+  margin-bottom: 20px
+  @extend %pop-gds__align
+
+.pop-gds__markdown
+  @extend %pop-gds__align
+
+.pop-gds__old-price
+  font-weight: 500
+  font-size: 1.1rem
+  color: #000000
+  opacity: .3
+  display: inline-block
+  margin-right: 8px
+
+.pop-gds__percent
+  font-size: 1.1rem
+  color: #FF0000
+  font-weight: bold
+
+.pop-gds__actions
+  display: flex
+  justify-content: space-between
+  @extend %pop-gds__align
+
+.pop-gds__btn-add
+  cursor: pointer
+  border: none
+  background: none
+
+.pop-gds__curr-price
+  font-size: 1.5rem
+  font-weight: 800
+  background: $accent
+  padding: 0 6px
+  position: relative
+  &:before
+    content: 'р/кг'
+    right: -40px
+    color: #000000
+    opacity: .3
+    font-size: 1.1rem
+    position: absolute
+
+
+/* -----------
+  Main Footer
+ ------------*/
+.main-footer
+  padding: 38px 0 
+  background: #F4F4F4
+
+.main-footer__logo
+  width: 45px
+  display: block
+  img
+    @extend %img-resp
+
+.main-footer__info-link
+  display: flex
+  display: flex
+  justify-content: space-between
+  @extend %list
+
+.main-footer__info-links
+  a
+    @extend %a
+
+.main-footer__soc-title
+  font-size: 10px
+  text-align: center
+  font-weight: bold
+  margin-bottom: 8px
+
+.main-footer__soc-link
+  display: flex
+  @extend %list
+  justify-content: center 
+
+.main-footer__soc-links
+  padding: 0 3px 
+
+
+
+/* -----------
+ Bread crumbs
+ ------------*/
+.br-cru
+  padding-top: 120px
+
+.br-cru__list
+  @extend %list
+  display: flex
+  margin-left: -15px
+  margin-right: -15px
+
+.br-cru__link
+  padding-left: 15px
+  padding-right: 15px
+  position: relative
+  &:not(:last-child)::after
+    content: ''
+    top: 50%
+    right: 0
+    width: 12px
+    height: 12px
+    transform: translate(50%, -50%)
+    background: url('../img/bread-crumbs-arrow.svg') no-repeat center
+    background-size: contain
+    position: absolute
+  a
+    @extend %a
+    font-size: 18px
+
+/*--------
+  Catalog
+ --------*/
+
+.filt__by-view
+  margin-bottom: 20px
+   
+.filt__field-chbox
+  display: none
+  &:checked
+    & + .filt__label-chbox::before
+      background: $accent
+      border-color: $accent
+
+.filt__label-chbox
+  position: relative
+  padding-left: 30px
+  margin-bottom: 0
+  font-size: .8rem
+  &:before
+    content: ''
+    width: 17px 
+    height: 17px
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    border-radius: 50%
+    border: 1px solid #30345A
+    position: absolute
+    transition: all .3s ease
+
+.filt__head
+  margin-bottom: 10px  
+
+/*-----
+  Listing
+ ------*/
+.cat__listing
+  padding-top: 65px
+
+.listing
+  padding-bottom: 56px
+
+.card
+  background: #fff
+  margin-bottom: 20px
+  font-weight: 500
+  box-shadow: 0 2px 15px rgba(000,000,000, .15)
+
+.card__prod-img
+  display: block
+  margin-bottom: 32px
+  img 
+    @extend %img-resp
+
+%list-align
+  max-width: 200px
+  width: 100%
+  
+.card__body
+  // padding-left: 25px
+  // padding-right: 25px
+  padding-bottom: 32px
+  display: flex
+  flex-direction: column
+  align-items: center
+
+.card__prod-name
+  @extend %list-align
+  margin-bottom: 15px
+  a
+    @extend %a
+    font-size: 1.1rem
+    text-align: left
+
+.card__prod-compos
+  font-size: .9rem
+  @extend %list-align
+  margin-bottom: 24px
+
+.card__prod-weight
+  @extend %list
+  display: flex
+  align-items: center
+  @extend %list-align
+  background: #F4F4F4
+  margin-bottom: 24px
+  border-radius: 25px
+
+.card__prod-weight-item
+  width: 33.3%
+  text-align: center
+
+.card__prod-input
+  display: none
+
+.card__prod-label
+  width: 90%
+  font-size: 14px
+  padding: 5px 0
+  margin-bottom: 0
+  border-radius: 25px
+  border: 1px solid transparent
+  transition: border .3s ease, width .3s ease
+  
+.card__prod-input:checked + .card__prod-label
+  border-color: #133350
+  border-radius: 25px
+  width: 100%
+
+.card__prod-foot
+  display: flex
+  @extend %list-align
+  align-items: center
+  justify-content: space-between
+
+.card__prod-price
+  font-size: 18px
+
+.card__prod-cart-btn
+  background: $accent
+  border: none
+  width: 122px
+  padding: 7px 0
+  font-size: 14px
+  border-radius: 25px
+
+/* -------------
+  Catalog Banner
+  -------------*/
+
+.cat-banner
+  padding: 120px 0
+  background: #E5E5E5
+
+.cat-banner__heading
+  font-size: 3rem
+  line-height: 1.2
+  font-weight: 800
+  margin-bottom: 0
+
+.cat-banner__desc
+  font-size: 1.5rem
+  font-weight: 500
+  margin: 0
+
+
+/*----------
+  Pagination
+ -----------*/
+.pagination
+  padding-bottom: 120px
+
+.pagination__list
+  @extend %list
+  display: flex
+  align-items: center
+  justify-content: center
+
+.pagination__item
+  padding: 0 15px
+  > a 
+    @extend %a
+    transition: color .3s ease
+    &:hover
+      color: $accent
+  &.pagination__item--active
+    > a
+      color: $accent
+
+
+
+/* ------------
+  Page product
+ -------------*/
+.product
+  padding-top: 65px
+
+.product__img
+  img
+
+.product__name
+  font-size: 2.25rem
+  font-weight: 700
+
+// .product__info
+
+.product__info--stor
+  p
+    margin-bottom: 0
+
+
+
+
+
+
+
+
+
 
 
 /* ---- Media css ---- */

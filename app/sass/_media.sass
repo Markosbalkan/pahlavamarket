@@ -19,10 +19,10 @@
   /*------
     Listing
    --------*/
-  .listing__inner
+  .listing
     .col-lg-3
-      padding-left: 10px
-      padding-right: 10px
+      padding-left: 6px
+      padding-right: 6px
 
 // ≥992px
 +media-breakpoint-down(md)
@@ -73,6 +73,26 @@
     &:active
       box-shadow: 0 4px 10px $accent
 
+  /* -------
+   Rewiews
+   ------- */
+  .rewiews__list
+    flex-wrap: wrap
+
+  .rewiews__item
+    width: 50%
+
+  /* ----------
+   Main slider
+   -----------*/
+  .main-slider__nav
+    overflow-y: auto
+    margin: 0
+  
+  .main-slider__item
+    margin-bottom: 40px
+  
+
 // ≥768px
 +media-breakpoint-down(sm)
   // html
@@ -109,6 +129,58 @@
   .primary-btn
     width: 100%
     padding: 10px 0
+  
+  /* ----------
+   Main slider
+   -----------*/
+
+  .main-slider__desc-prod
+    width: 50%
+    padding-left: 15px
+  
+  .main-slider__img-prod
+    width: 50%
+
+  .main-slider__name-prod
+    font-size: 1.1rem
+
+  .main-slider__compos-prod
+    font-size: .9rem
+    margin-bottom: 20px
+  
+  .main-slider__order-btn
+    margin: 0
+    font-size: 14px
+    padding: 8px 0
+    max-width: 200px
+
+  /* --------------------
+   Section popular goods
+   -------------------- */ 
+  .pop-gds__item
+    flex-direction: row
+
+  .pop-gds__item-top
+    width: 40%
+  
+  .pop-gds__item-body
+    width: 60%
+    align-items: flex-start
+    padding: 10px 10px 10px 20px
+
+  /* -----------
+   Main Footer
+   ------------*/
+  .main-footer__info-link
+    align-items: center
+    flex-direction: column
+
+  .main-footer__logo
+    margin: 0 auto 15px
+
+  .main-footer__info-link
+    margin-bottom: 15px
+  
 
 // ≥576px
 +media-breakpoint-down(xs)
@@ -123,8 +195,27 @@
    -----*/
   .deliver-prod__item
     height: 280px
-  
 
+  /* -------
+   Rewiews
+   ------- */
+  .rewiews__item
+    width: 100%
+
+  /* ----------
+   Main slider
+   -----------*/
+  .main-slider__desc-prod
+    width: 60%
+
+  .main-slider__img-prod
+    width: 40%
+
+  .main-slider__item 
+    padding: 0  
+
+
+  
 /*==========  Mobile First  ==========*/
 
 // ≤576px

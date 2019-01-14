@@ -6,6 +6,7 @@ const gulp = require("gulp"),
   notify = require('gulp-notify'), // вылавливание ошибок 
   uglify = require('gulp-uglify'), // минификация sass
   cleancss = require('gulp-clean-css'), // минификация css
+  concat = require('gulp-concat'), // Минификация js 
   autoprefixer = require('gulp-autoprefixer'); // авто префиксы
 
 
@@ -19,22 +20,36 @@ gulp.task("browser-sync", function() {
 });
 
 gulp.task('styles', function() {
-  return gulp.src("app/sass/main.sass")
-  .pipe(sass().on("error", notify.onError()))
+  return gulp.src("app/sass/**/*.sass")
+  .pipe(sass({ outputStyle: 'expanded' }).on("error", notify.onError()))
+  .pipe(rename({ suffix: '.min', prefix : '' }))
   .pipe(autoprefixer(["last 15 versions"]))
+  // .pipe(cleancss( {level: { 1: { specialComments: 0 } } }))
   .pipe(gulp.dest("app/css"))
-  .pipe(browserSync.reload({stream: true}))
+  .pipe(browserSync.stream())
 });
 
-// gulp.task("js", function() {
-//   return gulp.src("app/js/main.js")
-//   .pipe(browserSync.reload({stream: true}))
-// });
+gulp.task('scripts', function(){
+  return gulp.src([
+    'app/libs/jquery/dist/jquery.min.js',
+    'app/libs/slick-carousel/slick/slick.min.js',
+    'app/js/main.js' // last line
+    ])
+  .pipe(concat('scripts.min.js'))
+  // .pipe(uglify()) // Mifify js (opt.)
+  .pipe(gulp.dest('app/js'))
+	.pipe(browserSync.reload({ stream: true }))
+})
 
-gulp.task('watch', ['styles', 'browser-sync'], function() {
-	gulp.watch("app/sass/*.sass", ['styles']);
-	gulp.watch('app/js/main.js', browserSync.reload);
-	gulp.watch('app/*.html', browserSync.reload)
+gulp.task('code', function(){
+  return gulp.src('app/*.html')
+	.pipe(browserSync.reload({ stream: true }))  
+})
+
+gulp.task('watch', ['browser-sync'], function() {
+	gulp.watch("app/sass/**/*.sass", ['styles']);
+  gulp.watch(['libs/**/*.js', 'app/js/main.js'], ['scripts']);
+  gulp.watch('app/*.html', ['code'])
 });
 
 gulp.task('default', ['watch']);
