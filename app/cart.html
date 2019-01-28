@@ -75,86 +75,86 @@
       </div>
     </header>
 
-    <!-- Bread crumbs -->
-    <nav class="br-cru">
-      <div class="container">
-        <ul class="br-cru__list">
-          <li class="br-cru__link">
-            <a href="">Главная</a>
-          </li>
-          <li class="br-cru__link">
-            <a href="">Каталог</a>
-          </li>
-          <li class="br-cru__link">
-            <a href="">Пахлава</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <!-- End Bread crumbs-->
+    <!-- Hidden icon -->
+    <div class="svg-icon">
+      <!-- icon-minus -->
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-minus" width="36" height="36" viewBox="0 0 36 36">
+          <path d="M18 0C8.05835 0 0 8.05835 0 18C0 27.9416 8.05835 36 18 36C27.9416 36 36 27.9405 36 18C36 8.05953 27.9416 0 18 0ZM18 33.75C9.30147 33.75 2.25 26.6985 2.25 18C2.25 9.30147 9.30147 2.25 18 2.25C26.6985 2.25 33.75 9.30147 33.75 18C33.75 26.6985 26.6985 33.75 18 33.75ZM24.75 16.875H11.25C10.629 16.875 10.125 17.379 10.125 18C10.125 18.621 10.629 19.125 11.25 19.125H24.75C25.371 19.125 25.875 18.621 25.875 18C25.875 17.379 25.371 16.875 24.75 16.875Z"
+            fill="#FFB800" />
+        </symbol>
+      </svg>
+      <!-- icon plus -->
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <symbol id="icon-plus" width="36" height="36" viewBox="0 0 36 36">
+          <path d="M17.9994 36C8.07418 36 0 27.9247 0 17.9994C0 8.07418 8.07418 0 17.9994 0C27.9247 0 35.9988 8.07418 35.9988 17.9994C36 27.9247 27.9247 36 17.9994 36ZM17.9994 2.05622C9.20777 2.05622 2.05622 9.20893 2.05622 17.9994C2.05622 26.7899 9.20777 33.9415 17.9994 33.9415C26.7899 33.9415 33.9415 26.7899 33.9415 17.9994C33.9415 9.20893 26.7899 2.05622 17.9994 2.05622Z"
+            fill="#FFB800" />
+          <path d="M25.0965 19.0276H10.9023C10.3344 19.0276 9.87305 18.5686 9.87305 17.9995C9.87305 17.4315 10.3332 16.9702 10.9023 16.9702H25.0965C25.6644 16.9702 26.1246 17.4315 26.1246 17.9995C26.1246 18.5686 25.6656 19.0276 25.0965 19.0276Z"
+            fill="#FFB800" />
+          <path d="M17.9995 26.1246C17.4315 26.1246 16.9702 25.6644 16.9702 25.0965V10.9023C16.9702 10.3344 17.4315 9.87308 17.9995 9.87308C18.5674 9.87308 19.0276 10.3344 19.0276 10.9023V25.0965C19.0276 25.6656 18.5686 26.1246 17.9995 26.1246Z"
+            fill="#FFB800" />
+        </symbol>
+      </svg>
 
-    <!-- Product -->
-    <main class="wrap-product">
-      <section class="product">
+    </div>
+    <!-- Hidden icon end -->
+    <main>
+      <section class="cart">
         <div class="container">
-          <div class="row">
-            <div class="col-lg-5 col-md-6">
-              <div class="product__img">
+          <h3 class="cart__heading">Оформление заказа</h3>
+          <ul class="cart__list">
+            <li class="cart__item">
+              <div class="cart__item-img">
                 <picture>
-                  <!-- <source>  -->
-                  <img class="img-resp" src="img/test-product-img.jpg" alt="">
+                  <img src="img/min-img-prod.jpg" alt="">
                 </picture>
               </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-              <div class="product__body">
-                <!-- <div class="product__link-return">
-                  <a href="catalog.html">Каталог</a>
-                </div> -->
-                <div class="product__name">Бакинская пахлава</div>
-                <p class="product__info product__info--desc">
-                  Традиционная Бакинская пахлава на основе
-                  грецкого ореха. Пахлава имеет неповторимый
-                  вкус – смесь пряностей, орехов и нежного теста
-                </p>
-                <div class="product__info product__info--stor">
-                  <p>Условия хранения:</p>
-                  <p>Хранить при температуре не выше 25'C.</p>
-                  <p>Срок годности не более 7 суток.</p>
-                </div>
-                <div class="product__wrap-weight">
-                  <b class="product__weight-title">Вес товара</b>
-                  <ul class="product__weights-list">
-                    <li class="product__weight">
-                      <input class="product__field-weight" id="field-weight-1" type="radio" name="field-weight" value=""
-                        checked>
-                      <label class="product__label-weight" for="field-weight-1">500 г</label>
-                    </li>
-                    <li class="product__weight">
-                      <input class="product__field-weight" id="field-weight-2" type="radio" name="field-weight" value="">
-                      <label class="product__label-weight" for="field-weight-2">1000 г</label>
-                    </li>
-                    <li class="product__weight">
-                      <input class="product__field-weight" id="field-weight-3" type="radio" name="field-weight" value="">
-                      <label class="product__label-weight" for="field-weight-3">1500 г</label>
-                    </li>
-                    <!-- <li class="product__weight">
-                    <input class="product__field-weight" id="field-weight-1" type="radio" name="field-weight" value="">
-                    <label for="field-weight-1">2000</label>
-                  </li>
-                  <li class="product__weight">
-                    <input class="product__field-weight" id="field-weight-1" type="radio" name="field-weight" value="">
-                    <label for="field-weight-1">500</label>
-                  </li> -->
-                  </ul>
-                </div>
-                <div class="product__action">
-                  <div class="product__price">750 р</div>
-                  <button class="product__order-btn">Оформить заказ</button>
+              <div class="cart__item-name">Бакинская пахлава 1000г</div>
+              <div class="cart__item-count">
+                <div class="count-ctrl">
+                  <button class="count-ctrl__switcher"></button>
+                  <span class="count-ctrl__quantity"></span>
+                  <button class="count-ctrl__switcher"></button>
                 </div>
               </div>
-            </div>
-          </div>
+              <div class="cart__item-price">750 руб</div>
+              <div class="cart__item-del"></div>
+            </li>
+            <li class="cart__item">
+              <div class="cart__item-img">
+                <picture>
+                  <img src="img/min-img-prod.jpg" alt="">
+                </picture>
+              </div>
+              <div class="cart__item-name">Бакинская пахлава 2000г</div>
+              <div class="cart__item-count">
+                <div class="count-ctrl">
+                  <button class="count-ctrl__switcher"></button>
+                  <span class="count-ctrl__quantity"></span>
+                  <button class="count-ctrl__switcher"></button>
+                </div>
+              </div>
+              <div class="cart__item-price">750 руб</div>
+              <div class="cart__item-del"></div>
+            </li>
+            <li class="cart__item">
+              <div class="cart__item-img">
+                <picture>
+                  <img src="img/min-img-prod.jpg" alt="">
+                </picture>
+              </div>
+              <div class="cart__item-name">Бакинская пахлава 1000г</div>
+              <div class="cart__item-count">
+                <div class="count-ctrl">
+                  <button class="count-ctrl__switcher"></button>
+                  <span class="count-ctrl__quantity"></span>
+                  <button class="count-ctrl__switcher"></button>
+                </div>
+              </div>
+              <div class="cart__item-price">750 руб</div>
+              <div class="cart__item-del"></div>
+            </li>
+          </ul>
         </div>
       </section>
     </main>

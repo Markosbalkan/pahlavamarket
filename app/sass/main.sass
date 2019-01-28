@@ -7,7 +7,8 @@
  * 2. Определить нужный размер изображения.
  * 3. Уменшить верхние и нижние отсупы у секций на мобильном разрешении
  * 4. Доверстать корзину. Сделать корзину для мобилки.
- * 5. Переопределить шрифты. Там где размер шрифта смотрится хорошо на всез разреш сделать в px, в остальгных случ в rem  
+ * 5. Переопределить шрифты. Там где размер шрифта смотрится хорошо на всез разреш сделать в px, в остальгных случ в rem
+ * 6. Спрятать svg. Обращатья к их копиям  
  */
 
 ::placeholder
@@ -702,7 +703,7 @@ body
  Bread crumbs
  ------------*/
 .br-cru
-  padding-top: 120px
+  padding-top: 40px
 
 .br-cru__list
   @extend %list
@@ -726,7 +727,7 @@ body
     position: absolute
   a
     @extend %a
-    font-size: 18px
+    font-size: 16px
 
 /*--------
   Catalog
@@ -835,7 +836,6 @@ body
   
 .card__prod-input:checked + .card__prod-label
   border-color: #133350
-  border-radius: 25px
   width: 100%
 
 .card__prod-foot
@@ -905,6 +905,7 @@ body
  -------------*/
 .product
   padding-top: 65px
+  padding-bottom: 100px
 
 .product__img
   img
@@ -914,15 +915,89 @@ body
   font-weight: 700
 
 // .product__info
-
 .product__info--stor
+  margin-bottom: 30px
   p
     margin-bottom: 0
 
+.product__wrap-weight
+  margin-bottom: 48px 
 
+.product__weight-title
+  display: block
+  margin-bottom: 15px
 
+.product__weights-list
+  @extend %list
+  display: flex
+  max-width: 290px
+  width: 100%
 
+.product__weight
+  width: 33.3%
+  text-align: center
 
+.product__field-weight
+  display: none
+
+.product__label-weight
+  width: 80%
+  border-radius: 25px
+  margin: 0
+  cursor: pointer
+  padding: 2px 0
+  border: 1px solid transparent
+  transition: all .3s ease
+
+.product__field-weight:checked + .product__label-weight
+  border-color: #30345A
+  width: 90%
+
+.product__action
+  display: flex
+  align-items: center
+  max-width: 390px
+  width: 100%
+  justify-content: space-between
+
+.product__price
+  font-size: 20px
+  font-weight: 700
+
+.product__order-btn
+  border: none
+  padding: 10px 0
+  max-width: 200px 
+  width: 100%
+  cursor: pointer
+  border-radius: 25px
+  background: $accent
+
+/* ----------
+  Page cart
+  ---------*/
+.cart
+  padding-top: 64px
+
+.cart__heading
+  @extend %style-head
+  text-align: center
+  margin-bottom: 48px
+
+.cart__item
+  display: flex
+  align-items: center
+  &:not(:last-child)
+    margin-bottom: 23px
+
+.cart__item-img
+  width: 100px
+  margin-right: 20px
+  img
+    @extend %img-resp
+
+.cart__item-name
+  font-weight: 700
 
 
 
