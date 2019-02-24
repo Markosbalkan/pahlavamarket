@@ -56,6 +56,13 @@ html
   font-size: 2.25rem
   font-weight: 800
 
+button
+  outline: none
+  &:hover
+    outline: none
+  &:focus
+    outline: none
+
 %primary-text
   font-size: 1.5rem
   margin-bottom: 0
@@ -195,7 +202,6 @@ body
       display: flex
     .header__count-prod::after
       transform: translateY(-50%) rotate(180deg)
-
 
 .header__card-list
   display: none
@@ -979,6 +985,10 @@ body
 .cart
   padding-top: 64px
 
+.cart__list
+  padding: 0
+  margin: 0
+  
 .cart__heading
   @extend %style-head
   text-align: center
@@ -987,21 +997,61 @@ body
 .cart__item
   display: flex
   align-items: center
+  justify-content: space-between
   &:not(:last-child)
     margin-bottom: 23px
 
+.cart__item-left
+  display: flex
+  align-items: center
+  margin-bottom: 30px 
+
+.cart__item-left
+  margin-bottom: 30px 
+  
 .cart__item-img
   width: 100px
-  margin-right: 20px
+  margin-right: 24px
   img
     @extend %img-resp
 
 .cart__item-name
   font-weight: 700
 
+.cart__item-mid
+  display: flex
+  width: 100%
+  justify-content: space-between
+  align-items: center
 
+.cart__item-count
+  margin-right: 90px
 
+.count-ctrl__switcher
+  background: none
+  cursor: pointer
+  border: none
+  padding: 0
+  svg
+    width: 30px
+    height: 30px
+    fill: $accent
 
+.count-ctrl__quantity
+  padding: 0 15px
+
+.cart__item-price
+  font-weight: 700
+
+.cart__item-del
+  background: none
+  cursor: pointer
+  border: none
+  padding: 0
+  svg
+    width: 36px
+    height: 36px
+    fill: $text
 
 
 /* ---- Media css ---- */

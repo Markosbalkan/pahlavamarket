@@ -7,7 +7,36 @@ const gulp = require("gulp"),
   uglify = require('gulp-uglify'), // минификация sass
   cleancss = require('gulp-clean-css'), // минификация css
   concat = require('gulp-concat'), // Минификация js 
-  autoprefixer = require('gulp-autoprefixer'); // авто префиксы
+  autoprefixer = require('gulp-autoprefixer'), // авто префиксы
+  // Svg package
+  svgSprites = require('gulp-svg-sprites'),
+  // svgmin = require('gulp-svgmin');
+  cheerio = require('gulp-cheerio');
+
+
+gulp.task('svg-sprite', function(){
+  return gulp.src('app/img/svg-separate/*.svg')
+    // .pipe(svgmin({
+    //   js2svg: {
+    //     pretty: true
+    //   }
+    // }))
+    .pipe(cheerio({
+      run: function($){
+        $('[style]').removeAttr('style');
+        $('[fill]').removeAttr('fill');
+      }
+    }))
+    .pipe(svgSprites({
+      mode: 'symbols',
+      selector: 'icon-%f',
+      preview: false,
+      svg: {
+        symbols: 'sprite.svg'
+      }
+    }))
+    .pipe(gulp.dest('app/img/sprites'))
+});
 
 
 gulp.task("browser-sync", function() {
