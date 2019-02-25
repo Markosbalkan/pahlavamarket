@@ -186,15 +186,27 @@
    ---------*/
   .cart__item
     flex-wrap: wrap
+    align-content: center
   
   .cart__item-left
     order: 0
+    width: 80%
 
   .cart__item-mid
     order: 2
+    width: 100%
+    margin-top: 15px
+    justify-content: space-between
 
   .card__item-right
     order: 1
+    width: 20%
+    display: flex
+    align-self: flex-start
+    justify-content: flex-end
+
+  .cart__item-count
+    margin: 0
 
 // ≥576px
 +media-breakpoint-down(xs)
